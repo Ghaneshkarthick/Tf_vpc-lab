@@ -2,7 +2,7 @@ name: VPC deplayment in AWS
 on:
   push:
     branches:
-      main
+      
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest

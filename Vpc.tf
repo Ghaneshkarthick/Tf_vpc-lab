@@ -9,6 +9,7 @@ resource "aws_subnet" "public_a" {
   vpc_id     = aws_vpc.lab_vpc.id
   cidr_block = var.cidr_public_a
   availability_zone = "eu-west-1a"
+  map_public_ip_on_launch =true
   tags = {
     Name = "Public_Subnet_a"
   }
@@ -17,6 +18,7 @@ resource "aws_subnet" "public_b" {
   vpc_id     = aws_vpc.lab_vpc.id
   cidr_block = var.cidr_public_b
   availability_zone = "eu-west-1b"
+  map_public_ip_on_launch =true
   tags = {
     Name = "Public_Subnet_b"
   }
@@ -25,6 +27,7 @@ resource "aws_subnet" "public_c" {
   vpc_id     = aws_vpc.lab_vpc.id
   cidr_block = var.cidr_public_c
   availability_zone = "eu-west-1c"
+  map_public_ip_on_launch =true
   tags = {
     Name = "Public_Subnet_c"
   }
