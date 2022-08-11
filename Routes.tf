@@ -29,12 +29,12 @@ resource "aws_route_table" "nat_route_tbl" {
 }
 
 resource "aws_route_table_association" "Public_Subnet_IGW" {
-  subnet_id      = aws_subnet.public.id
+  subnet_id      = aws_subnet.public_a.id
   route_table_id = aws_route_table.Int_route_tbl.id
 }
 
 resource "aws_route_table_association" "Private_Subnet_Nat" {
-  subnet_id      = aws_subnet.private.id
+  subnet_id      = aws_subnet.private_a.id
   route_table_id = aws_route_table.nat_route_tbl.id
 }
 
