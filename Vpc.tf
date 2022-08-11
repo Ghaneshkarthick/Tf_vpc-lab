@@ -5,25 +5,61 @@ resource "aws_vpc" "lab_vpc" {
         Name = var.vpc_name
   }
 }
-resource "aws_subnet" "public" {
+resource "aws_subnet" "public_a" {
   vpc_id     = aws_vpc.lab_vpc.id
-  cidr_block = var.cidr_public
-
+  cidr_block = var.cidr_public_a
+  availability_zone = "eu-west-1a"
   tags = {
-    Name = "Public_Subnet"
+    Name = "Public_Subnet_a"
   }
 }
-resource "aws_subnet" "private" {
+resource "aws_subnet" "public_b" {
   vpc_id     = aws_vpc.lab_vpc.id
-  cidr_block = var.cidr_private
+  cidr_block = var.cidr_public_b
+  availability_zone = "eu-west-1b"
+  tags = {
+    Name = "Public_Subnet_b"
+  }
+}
+resource "aws_subnet" "public_c" {
+  vpc_id     = aws_vpc.lab_vpc.id
+  cidr_block = var.cidr_public_c
+  availability_zone = "eu-west-1c"
+  tags = {
+    Name = "Public_Subnet_c"
+  }
+}
+resource "aws_subnet" "private_a" {
+  vpc_id     = aws_vpc.lab_vpc.id
+  cidr_block = var.cidr_private_a
+  availability_zone = "eu-west-1a"
 
   tags = {
-    Name = "Private_Subnet"
+    Name = "Private_Subnet_a"
+  }
+}
+resource "aws_subnet" "private_b" {
+  vpc_id     = aws_vpc.lab_vpc.id
+  cidr_block = var.cidr_private_b
+  availability_zone = "eu-west-1b"
+
+  tags = {
+    Name = "Private_Subnet_b"
+  }
+}
+resource "aws_subnet" "private_c" {
+  vpc_id     = aws_vpc.lab_vpc.id
+  cidr_block = var.cidr_private_c
+  availability_zone = "eu-west-1c"
+
+  tags = {
+    Name = "Private_Subnet_c"
   }
 }
 resource "aws_subnet" "data" {
   vpc_id     = aws_vpc.lab_vpc.id
   cidr_block = var.cidr_data
+  availability_zone = "eu-west-1c"
 
   tags = {
     Name = "Data_Subnet"
