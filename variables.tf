@@ -7,11 +7,24 @@ variable "vpc_cidr" {
 
   
 }
-variable "cidr_public" {
-    description = "This is the cidr value for public subnet"
+variable "cidr_public_a" {
+    description = "This is the cidr value for public_a subnet"
 }
-variable "cidr_private" {
-    description = "This is the cidr value for private subnet"
+variable "cidr_public_b" {
+    description = "This is the cidr value for public_b subnet"
+}
+variable "cidr_public_c" {
+    description = "This is the cidr value for public_c subnet"
+}
+
+variable "cidr_private_a" {
+    description = "This is the cidr value for private_a subnet"
+}
+variable "cidr_private_b" {
+    description = "This is the cidr value for private_b subnet"
+}
+variable "cidr_private_c" {
+    description = "This is the cidr value for private_c subnet"
 }
 variable "cidr_data" {
     description = "This is the cidr value for data subnet"
