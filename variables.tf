@@ -4,8 +4,6 @@ variable "vpc_name" {
 }
 variable "vpc_cidr" {
     description = "This is the cidr value of the vpc"
-
-  
 }
 variable "cidr_public_a" {
     description = "This is the cidr value for public_a subnet"
