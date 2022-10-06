@@ -28,17 +28,35 @@ resource "aws_route_table" "nat_route_tbl" {
   }
 }
 
-resource "aws_route_table_association" "Public_Subnet_IGW" {
+resource "aws_route_table_association" "Public_Subnet_a_IGW" {
   subnet_id      = aws_subnet.public_a.id
   route_table_id = aws_route_table.Int_route_tbl.id
 }
 
-resource "aws_route_table_association" "Private_Subnet_Nat" {
+resource "aws_route_table_association" "Public_Subnet_b_IGW" {
+  subnet_id      = aws_subnet.public_b.id
+  route_table_id = aws_route_table.Int_route_tbl.id
+}
+resource "aws_route_table_association" "Public_Subnet_c_IGW" {
+  subnet_id      = aws_subnet.public_c.id
+  route_table_id = aws_route_table.Int_route_tbl.id
+}
+resource "aws_route_table_association" "Private_Subnet_a_Nat" {
   subnet_id      = aws_subnet.private_a.id
   route_table_id = aws_route_table.nat_route_tbl.id
 }
-
-
+resource "aws_route_table_association" "Private_Subnet_b_Nat" {
+  subnet_id      = aws_subnet.private_b.id
+  route_table_id = aws_route_table.nat_route_tbl.id
+}
+resource "aws_route_table_association" "Private_Subnet_c_Nat" {
+  subnet_id      = aws_subnet.private_c.id
+  route_table_id = aws_route_table.nat_route_tbl.id
+}
+resource "aws_route_table_association" "Private_Subnet_d_Nat" {
+  subnet_id      = aws_subnet.private_d.id
+  route_table_id = aws_route_table.nat_route_tbl.id
+}
 resource "aws_route_table_association" "data" {
   subnet_id      = aws_subnet.data.id
   route_table_id = aws_route_table.nat_route_tbl.id
